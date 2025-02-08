@@ -1,8 +1,9 @@
-import { Link } from "react-router-dom"
-import { useState } from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons"
-import { HoverBlackButton, LinkHoverLoad } from "../ui"
+import { Link } from "react-router-dom"
+import { useState } from "react"
+import HoverBlackButton from "./../ui/components/HoverBlackButton"
+import LinkHoverLoad from "./../ui/components/LinkHoverLoad"
 
 function Navbar() {
   const [activeLink, setActiveLink] = useState("Home")
