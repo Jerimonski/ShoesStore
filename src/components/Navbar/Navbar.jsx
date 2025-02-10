@@ -1,8 +1,9 @@
-import { Link } from "react-router-dom"
-import { useState } from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons"
-import { HoverBlackButton, LinkHoverLoad } from "../ui"
+import { Link } from "react-router-dom"
+import { useState } from "react"
+import HoverBlackButton from "./../ui/components/HoverBlackButton"
+import LinkHoverLoad from "./../ui/components/LinkHoverLoad"
 
 function Navbar() {
   const [activeLink, setActiveLink] = useState("Home")
@@ -11,8 +12,8 @@ function Navbar() {
     setActiveLink(link)
   }
   return (
-    <nav className="flex justify-between items-center h-16 px-4">
-      <Link to={"/Home"} className="h-10 ">
+    <nav className="flex justify-between items-center h-16 px-6 max-w-[1400px] mx-auto">
+      <Link to={"/Home"} className="h-10">
         <img
           src="/images/LogoName.png"
           alt="Logo name Stride Vault"
