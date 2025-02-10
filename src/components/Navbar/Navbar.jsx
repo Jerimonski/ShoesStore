@@ -12,8 +12,8 @@ function Navbar() {
     setActiveLink(link)
   }
   return (
-    <nav className="flex justify-between items-center h-16 px-4">
-      <Link to={"/Home"} className="h-10 ">
+    <nav className="flex justify-between items-center h-16 px-6 max-w-[1400px] mx-auto">
+      <Link to={"/Home"} className="h-10">
         <img
           src="/images/LogoName.png"
           alt="Logo name Stride Vault"

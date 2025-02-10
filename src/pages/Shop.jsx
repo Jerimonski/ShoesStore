@@ -1,15 +1,21 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
+import LoadingScreen from "../components/LoadingScreen"
 
 function Shop() {
   const [counter, setCounter] = useState(16)
   const [shoes, setShoes] = useState([])
+  const [isLoading, setIsLoading] = useState(false)
 
   const fetchData = () => {
+    setIsLoading(true)
+
     return axios
       .get("https://apimocha.com/shoestradevalue/Shoes")
       .then((response) => setShoes(response.data.sneakers))
+      .finally(() => setIsLoading(false))
   }
+
   useEffect(() => {
     fetchData()
   }, [])
@@ -17,9 +23,11 @@ function Shop() {
   const handleMoreProduct = () => {
     setCounter(counter + 16)
   }
+
+  if (isLoading) return <LoadingScreen />
+
   return (
-    <div className="w-screen flex flex-col justify-center">
-      <h1 className=" text-center">FOKIN SHOOOOOESSSSSSSSSSS</h1>
+    <div className="w-full flex flex-col justify-center py-6">
       <div className=" w-full max-w-[1500px] flex flex-wrap justify-center mx-auto gap-6">
         {shoes &&
           shoes.slice(0, counter).map((shoesData, index) => {
