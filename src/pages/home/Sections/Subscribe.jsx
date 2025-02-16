@@ -1,7 +1,7 @@
 function Subscribe() {
   return (
-    <section className="max-w-[1600px] mx-auto">
-      <div className="bg-smoke-gray text-center py-24 space-y-14 py-8">
+    <section className="max-w-[1600px] mx-auto my-12">
+      <div className="bg-smoke-gray text-center py-12 space-y-14 py-8">
         <h2 className="text-3xl font-semibold">Joint the Vault</h2>
         <p>
           Subscribe to our newsletter for exclusive drops, special offers, and
