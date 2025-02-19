@@ -1,6 +1,9 @@
 import { Routes, Route } from "react-router-dom"
 
-import { CarShop, Home, Register, Shop } from "../pages"
+import CarShop from "../pages/CarShop"
+import Home from "../pages/home/Home"
+import Register from "../pages/Register"
+import Shop from "../pages/Shop"
 
 function RoutesConfig() {
   return (
