@@ -4,11 +4,13 @@ import Navbar from "../components/Navbar/Navbar"
 import Footer from "../components/Footer/Footer"
 function Index() {
   return (
-    <BrowserRouter>
-      <Navbar />
-      <RoutesConfig />
-      <Footer />
-    </BrowserRouter>
+    <ShoppingCarProvider>
+      <BrowserRouter>
+        <Navbar />
+        <RoutesConfig />
+        <Footer />
+      </BrowserRouter>
+    </ShoppingCarProvider>
   )
 }
 
