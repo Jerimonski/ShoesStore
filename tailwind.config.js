@@ -6,6 +6,7 @@ export default {
       colors: {
         "light-gray": "#eeeeee",
         "dark-gray": "#5a5a5a",
+        "smoke-gray": "#F3F4F6",
       },
     },
   },

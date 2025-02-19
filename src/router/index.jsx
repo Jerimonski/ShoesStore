@@ -1,6 +1,7 @@
 import { BrowserRouter } from "react-router-dom"
 import RoutesConfig from "../routes/RoutesConfig"
-import { Navbar, Footer } from "../components"
+import Navbar from "../components/Navbar/Navbar"
+import Footer from "../components/Footer/Footer"
 function Index() {
   return (
     <BrowserRouter>

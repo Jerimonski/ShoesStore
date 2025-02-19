@@ -5,11 +5,9 @@ import LoadingScreen from "../components/LoadingScreen"
 function Shop() {
   const [counter, setCounter] = useState(16)
   const [shoes, setShoes] = useState([])
-  const [isLoading, setIsLoading] = useState(false)
+  const [isLoading, setIsLoading] = useState(true)
 
   const fetchData = () => {
-    setIsLoading(true)
-
     return axios
       .get("https://apimocha.com/shoestradevalue/Shoes")
       .then((response) => setShoes(response.data.sneakers))
