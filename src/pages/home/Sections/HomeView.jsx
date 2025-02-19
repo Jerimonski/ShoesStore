@@ -16,7 +16,7 @@ function HomeView() {
             for themselves.
           </p>
           <button className="text-lg bg-black text-white py-4 px-8 flex mx-auto rounded hover:scale-110 duration-300">
-            Shop Now
+            <a href="/shop">Shop Now</a>
           </button>
         </div>
       </article>

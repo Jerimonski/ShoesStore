@@ -1,4 +1,4 @@
-function SneakerCard1({ imgSrc, alt, title }) {
+function SneakerCard1({ imgSrc, alt, title, linkPage }) {
   return (
     <article
       className="max-h-[450px] bg-white p-6 space-y-4"
@@ -11,7 +11,7 @@ function SneakerCard1({ imgSrc, alt, title }) {
       />
       <h3 className="font-semibold">{title}</h3>
       <button className="w-full border-2 py-1 text-sm hover:bg-smoke-gray duration-200 rounded-md">
-        See model
+        <a href={linkPage}>See model</a>
       </button>
     </article>
   )
