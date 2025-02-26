@@ -2,7 +2,7 @@ import LinkHover from "./../ui/LinkHover"
 function Footer() {
   return (
     <footer className="w-full bg-black text-white">
-      <section className="mx-auto max-w-[1600px] py-12">
+      <section className="mx-auto max-w-[1600px] pt-12 pb-1">
         <article className="flex px-8">
           <div className="w-1/2">
             <h3 className="text-lg font-semibold py-4">QUICK LINKS</h3>
