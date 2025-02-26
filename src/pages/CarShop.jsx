@@ -1,5 +1,7 @@
 import { useShoppingCar } from "../context/ShoppingCarContext"
 
+import { useShoppingCar } from "../context/ShoppingCarContext"
+
 function CarShop() {
   const { cart, dispatch } = useShoppingCar()
 
