@@ -1,6 +1,7 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
-import LoadingScreen from "../components/LoadingScreen"
+import LoadingScreen from "../../components/LoadingScreen"
+import { Link } from "react-router-dom"
 
 function Shop() {
   const [counter, setCounter] = useState(16)
@@ -10,10 +11,8 @@ function Shop() {
 
   const fetchData = () => {
     return axios
-      .get(
-        "https://api.myjson.online/v1/records/bf41777c-1714-49a2-b103-c087aa151e31"
-      )
-      .then((response) => setShoes(response.data.data.sneakers))
+      .get("https://apimocha.com/shoestradevalue/Shoes")
+      .then((response) => setShoes(response.data.sneakers))
       .finally(() => setIsLoading(false))
   }
 
@@ -53,21 +52,23 @@ function Shop() {
                   key={index}
                   className="w-80 cursor-pointer hover:scale-110 hover:shadow-2xl"
                 >
-                  <img
-                    src={shoesData.main_picture_url}
-                    alt={`Image of ${shoesData.name}`}
-                    className="bg-light-gray"
-                  />
-                  <div className="relative h-32 px-2">
-                    <h3 className="font-semibold">{shoesData.name}</h3>
-                    <span className="text-dark-gray">{shoesData.gender}</span>
-                    <p className="font-semibold py-4 absolute bottom-0">
-                      $
-                      {shoesData.retail_price_cents
-                        ? shoesData.retail_price_cents / 100
-                        : "N/A"}
-                    </p>
-                  </div>
+                  <Link to={`/product-details/${shoesData.name}`}>
+                    <img
+                      src={shoesData.main_picture_url}
+                      alt={`Image of ${shoesData.name}`}
+                      className="bg-light-gray"
+                    />
+                    <div className="relative h-32 px-2">
+                      <h3 className="font-semibold">{shoesData.name}</h3>
+                      <span className="text-dark-gray">{shoesData.gender}</span>
+                      <p className="font-semibold py-4 absolute bottom-0">
+                        $
+                        {shoesData.retail_price_cents
+                          ? shoesData.retail_price_cents / 100
+                          : "N/A"}
+                      </p>
+                    </div>
+                  </Link>
                 </div>
               )
             })}

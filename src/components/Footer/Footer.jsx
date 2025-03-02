@@ -1,4 +1,5 @@
 import LinkHover from "./../ui/LinkHover"
+
 function Footer() {
   return (
     <footer className="w-full bg-black text-white">
