@@ -3,6 +3,7 @@ import { useEffect, useState } from "react"
 import axios from "axios"
 import LoadingScreen from "../../../../components/LoadingScreen"
 import { useShoppingCar } from "../../../../context/ShoppingCarContext"
+import { toast } from "sonner"
 
 function ProductDetails() {
   const { name } = useParams()
@@ -25,7 +26,9 @@ function ProductDetails() {
 
   if (isLoading) return <LoadingScreen />
   if (!product)
-    return <h1 className="text-center text-3xl">Product not found 😢</h1>
+    return (
+      <h1 className="text-center text-3xl h-screen">Product not found 😢</h1>
+    )
 
   const productToCart = {
     id: product.id,
@@ -36,13 +39,13 @@ function ProductDetails() {
   }
 
   return (
-    <div className="max-w-[1600px] mx-auto py-14">
-      <section className="grid grid-cols-2 max-xl:flex max-xl:flex-col gap-10">
+    <div className="max-w-[1600px] mx-auto py-20 h-screen max-lg:h-full">
+      <section className="grid grid-cols-2 max-xl:flex max-xl:flex-col gap-10 max-lg:px-4">
         <div>
           <img
             src={product.original_picture_url}
             alt={product.name}
-            className="w-full py-8"
+            className="w-full"
           />
         </div>
         <article className="flex flex-col">
@@ -53,7 +56,7 @@ function ProductDetails() {
           </div>
           <div className="space-y-6">
             <h3 className="text-xl font-semibold">Sizes:</h3>
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-2 justify-center">
               {product.size_range
                 .sort((sizeA, sizeB) => sizeA - sizeB)
                 .map((size, index) => (
@@ -74,9 +77,12 @@ function ProductDetails() {
           <div className="flex justify-between pt-14 items-center">
             <button
               className="bg-black text-white text-xl px-8 py-5 rounded-md"
-              onClick={() =>
+              onClick={() => {
                 dispatch({ type: "ADD_TO_CART", payload: productToCart })
-              }
+                toast("✅ Product added to cart! 🛒", {
+                  style: { fontSize: "20px", padding: "16px" },
+                })
+              }}
             >
               Place order
             </button>
