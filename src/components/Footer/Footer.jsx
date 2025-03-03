@@ -2,7 +2,7 @@ import LinkHover from "./../ui/LinkHover"
 
 function Footer() {
   return (
-    <footer className="w-full bg-black text-white">
+    <footer className="mt-auto w-full bg-black text-white">
       <section className="mx-auto max-w-[1600px] pt-12 pb-1">
         <article className="flex px-8">
           <div className="w-1/2">
