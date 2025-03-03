@@ -12,7 +12,7 @@ function Navbar() {
     setActiveLink(link)
   }
   return (
-    <nav className="flex justify-between items-center h-16 max-w-[1600px] mx-auto">
+    <nav className="h-16 max-w-[1600px] mx-auto flex justify-between items-center w-full">
       <Link to={"/Home"} className="h-10">
         <img
           src="/images/LogoName.png"

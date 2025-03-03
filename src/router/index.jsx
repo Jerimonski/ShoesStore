@@ -7,12 +7,14 @@ import { Toaster } from "sonner"
 function Index() {
   return (
     <ShoppingCarProvider>
-      <BrowserRouter>
-        <Navbar />
-        <Toaster />
-        <RoutesConfig />
-        <Footer />
-      </BrowserRouter>
+      <div className="flex flex-col min-h-screen">
+        <BrowserRouter>
+          <Navbar />
+          <Toaster />
+          <RoutesConfig />
+          <Footer />
+        </BrowserRouter>
+      </div>
     </ShoppingCarProvider>
   )
 }
