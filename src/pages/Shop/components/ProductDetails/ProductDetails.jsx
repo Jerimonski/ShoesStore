@@ -39,7 +39,7 @@ function ProductDetails() {
   }
 
   return (
-    <div className="max-w-[1600px] mx-auto py-20 h-screen max-lg:h-full">
+    <div className="max-w-[1600px] mx-auto py-20 max-lg:h-full">
       <section className="grid grid-cols-2 max-xl:flex max-xl:flex-col gap-10 max-lg:px-4">
         <div>
           <img
